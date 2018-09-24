@@ -1,0 +1,72 @@
+body {
+  background-color: #eee;
+}
+
+.App {
+  text-align: center;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-logo {
+  margin: -30px;
+  height: 300px;
+}
+
+.App-header {
+  background-color: #35afd3;
+  height: 290px;
+  color: white;
+  z-index: 10;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.headerBar{
+  width: 100%;
+  background-color: #105da7;
+  height: 50px;
+  align-items: center;
+  border-top: solid #333 2px;
+  border-bottom: solid #333 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.links {
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+}
+
+.link, .link:visited, .link:link, .link:active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.link:active, .link:hover, .link.active {
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}

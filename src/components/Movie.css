@@ -1,0 +1,63 @@
+.movie {
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border: solid #333 2px;
+    border-radius: 1%;
+    overflow: hidden;
+}
+
+.movie:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.movieContainer {
+    overflow: visible;
+    width: 550px;
+}
+
+.ratingContainer {
+    position:relative;
+    top: -330px;
+    left: 490px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    padding-top: 4px;
+    border-bottom: solid #333 2px;
+    border-left: solid #333 2px;
+}
+
+.rating {
+    padding-top: 10px;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #105da7;
+    border: solid #333 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+  
+.poster {
+    height: 300px;
+}
+
+.text-container {
+    padding: 20px;
+}
+
+.overview {
+    height: 100px;;
+}
