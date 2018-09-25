@@ -26,22 +26,38 @@
 .movieContainer {
     overflow: visible;
     width: 550px;
+    margin-top: 20px;
 }
 
 .ratingContainer {
     position:relative;
-    top: -330px;
-    left: 490px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    top: -310px;
+    left: 488px;
+    width: 22px;
+    height: 22px;
     background-color: $bodyBackgroundColor;
     padding-top: 4px;
     border-bottom: solid #333 2px;
     border-left: solid #333 2px;
+    border-radius: 0 0 0 100px;
+     -moz-border-radius: 0 0 0 100px;
+     -webkit-border-radius: 0 0 0 100px;
+}
+
+.empty {
+    position:relative;
+    top:-32px;
+    left:0px;
+    width: 48px;
+    height: 48px;
+    background-color: $bodyBackgroundColor;
+    border-radius: 100px;
 }
 
 .rating {
+    position:relative;
+    top:-75px;
+    left:3px;
     padding-top: 10px;
     margin: auto;
     text-align: center;
@@ -51,9 +67,14 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    text-decoration: none;
     background-color: $ratingBackgroundColor;
     border: solid #333 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.rating:hover {
+    text-decoration: none;
 }
   
 .poster {

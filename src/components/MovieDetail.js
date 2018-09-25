@@ -30,13 +30,15 @@ class MovieDetail extends Component {
             )
         } else {
             if(movie){
-                console.log(movie)
+                let date = movie.release_date.split('-');
+                date = date[2] + '/' + date[1] + '/' + date[0];
                 return (
                     <div className="movie-detail-container">
                         <div className="backdrop-container">
                             <img className="backdrop" src={getBigImageUrl(movie.backdrop_path)} alt={`${movie.title} backdrop`} />
                         </div>
                         <p className="movie-detail-title">{movie.title}</p>
+                        <p className="movie-detail-date">{date}</p>
                         { movie.overview.length > 0 &&
                         <div className="movie-detail-overview-container">
                             <p className="movie-detail-category-title">Synopsis :</p>
