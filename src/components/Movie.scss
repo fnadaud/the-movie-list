@@ -1,3 +1,5 @@
+@import "../styles/colors.scss";
+
 .movie {
     background-color: white;
     width: 500px;
@@ -33,7 +35,7 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background-color: #eee;
+    background-color: $bodyBackgroundColor;
     padding-top: 4px;
     border-bottom: solid #333 2px;
     border-left: solid #333 2px;
@@ -49,7 +51,7 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #105da7;
+    background-color: $ratingBackgroundColor;
     border: solid #333 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }

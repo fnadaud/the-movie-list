@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom'
 import { NowPlaying, Popular, TopRated, MovieDetail } from './components';
-import logo from './assets/OffresSerli.png';
-import './App.css';
+import logo from './assets/header.png';
+import './App.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +26,7 @@ class App extends Component {
       search: ''
     }
     this.header = React.createRef();
-    this.sticky = 240;
+    this.sticky = 200;
   }
 
   componentDidMount() {
@@ -52,7 +52,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.search);
     return (
         <div className="App">
           <header className="App-header">

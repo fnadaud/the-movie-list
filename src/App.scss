@@ -1,22 +1,19 @@
-body {
-  background-color: #eee;
-}
+@import "styles/colors.scss";
 
 .App {
   text-align: center;
-  background-color: #eee;
   display: flex;
   flex-direction: column;
 }
 
 .App-logo {
-  margin: -30px;
-  height: 300px;
+  margin: 50px;
+  height: 100px;
 }
 
 .App-header {
-  background-color: #35afd3;
-  height: 290px;
+  background-color: $headerBackgroundColor;
+  height: 250px;
   color: white;
   z-index: 10;
 }
@@ -29,6 +26,16 @@ body {
   font-size: large;
 }
 
+.header-bar {
+  width: 100%;
+  background-color: $navbarBackgroundColor;
+  height: 50px;
+  align-items: center;
+  border-top: solid #333 2px;
+  border-bottom: solid #333 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
 .search-container {
   align-items: center;
   justify-content: center;
@@ -37,6 +44,8 @@ body {
   color: black;
   border-radius: 50px;
   border: solid black 2px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .search-icon {
@@ -53,16 +62,6 @@ body {
 .search-input:focus {
   border: 0px;
   outline: none;
-}
-
-.header-bar {
-  width: 100%;
-  background-color: #105da7;
-  height: 50px;
-  align-items: center;
-  border-top: solid #333 2px;
-  border-bottom: solid #333 2px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .links {
@@ -83,12 +82,14 @@ body {
   text-decoration: none;
   padding-right: 10px;
   padding-left: 10px;
+  margin-bottom: -1px;
+  white-space: nowrap;
 }
 
 .link:active, .link:hover, .link.active {
-  background-color: white;
   cursor: pointer;
-  color: black;
+  border-bottom: solid white 2px;
+  margin-bottom: -3px;
 }
 
 .sticky {

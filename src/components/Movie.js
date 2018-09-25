@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Media } from 'react-bootstrap';
 import { getImageUrl } from "../api/themoviedb";
-import './Movie.css';
+import './Movie.scss';
 
 class Movie extends Component {
 
@@ -22,7 +22,7 @@ class Movie extends Component {
                         </Link>
                     </Media>
                     <div className="ratingContainer">
-                        <div className="rating">{movie.vote_average * 10}%</div>
+                        <div className="rating">{movie.vote_average}</div>
                     </div>
                 </div>
             );

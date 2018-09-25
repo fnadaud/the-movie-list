@@ -17,7 +17,7 @@ export const getCredits = (movie_id) => {
 }
 
 export const getDetail = (movie_id) => {
-    return fetch(`${THE_MOVIE_DB.url}movie/${movie_id}?api_key=${THE_MOVIE_DB.key}`).then(response => response.json());
+    return fetch(`${THE_MOVIE_DB.url}movie/${movie_id}?api_key=${THE_MOVIE_DB.key}&language=fr-FR&page`).then(response => response.json());
 }
 
 export const getImageUrl = (path) => {

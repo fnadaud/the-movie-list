@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getDetail, getBigImageUrl } from "../api/themoviedb";
-import './MovieDetail.css';
+import './MovieDetail.scss';
 
 class MovieDetail extends Component {
 
@@ -30,15 +30,32 @@ class MovieDetail extends Component {
             )
         } else {
             if(movie){
+                console.log(movie)
                 return (
-                    <div className="movieDetailContainer">
-                        <div className="movieDetail">
-                            <div style={{height: "600px", overflow: 'hidden', marginBottom: "20px"}}>
-                                <img className="backdrop" src={getBigImageUrl(movie.backdrop_path)} alt={`${movie.title} backdrop`} />
-                            </div>
-                            <p className="movie-detail-title">{movie.title}</p>
+                    <div className="movie-detail-container">
+                        <div className="backdrop-container">
+                            <img className="backdrop" src={getBigImageUrl(movie.backdrop_path)} alt={`${movie.title} backdrop`} />
+                        </div>
+                        <p className="movie-detail-title">{movie.title}</p>
+                        { movie.overview.length > 0 &&
+                        <div className="movie-detail-overview-container">
+                            <p className="movie-detail-category-title">Synopsis :</p>
                             <p className="movie-detail-overview">{movie.overview}</p>
                         </div>
+                        }
+                        { movie.genres.length > 0 &&
+                        <div className="movie-detail-overview-container">
+                            <p className="movie-detail-category-title">Genres :</p>
+                            <p className="movie-detail-overview">{
+                                movie.genres.map((item, index) => {
+                                    if(index !== movie.genres.length - 1){
+                                        return item.name + ", "
+                                    } else {
+                                        return item.name
+                                    }
+                                })
+                            }</p>
+                        </div>}
                     </div>
                 )
             } else {
