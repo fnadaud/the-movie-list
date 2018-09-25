@@ -29,7 +29,33 @@ body {
   font-size: large;
 }
 
-.headerBar{
+.search-container {
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 200px;
+  color: black;
+  border-radius: 50px;
+  border: solid black 2px;
+}
+
+.search-icon {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.search-input {
+  border: 0px;
+  height: 30px;
+  font-weight: normal;
+}
+
+.search-input:focus {
+  border: 0px;
+  outline: none;
+}
+
+.header-bar {
   width: 100%;
   background-color: #105da7;
   height: 50px;

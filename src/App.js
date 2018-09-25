@@ -4,6 +4,9 @@ import { NowPlaying, Popular, TopRated, MovieDetail } from './components';
 import logo from './assets/OffresSerli.png';
 import './App.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 class Home extends Component {
 
   render() {
@@ -20,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: ''
+      search: ''
     }
     this.header = React.createRef();
     this.sticky = 240;
@@ -42,18 +45,28 @@ class App extends Component {
     }
   }
 
+  handleSearchChange = (event) => {
+    this.setState({
+      search: event.target.value
+    });
+  }
+
   render() {
+    console.log(this.state.search);
     return (
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <div className="headerBar" style={{display: "flex", justifyContent: 'space-evenly'}} ref={this.header}>
+            <div className="header-bar" style={{display: "flex", justifyContent: 'space-evenly'}} ref={this.header}>
               <div className="links">
                 <NavLink to='/nowplaying' className={'link'}>À l'affiche</NavLink>
                 <NavLink to='/popular' className={'link'}>Populaires</NavLink>
                 <NavLink to='/toprated' className={'link'}>Les mieux notés</NavLink>
               </div>
-              <div style={{display: "flex", alignItems: 'center', justifyContent: 'center', backgroundColor: "white", width: "200px", height: "30px", color: 'black', borderRadius: "50px", border: "solid black 2px"}}>Recherche</div>
+              <div className="search-container">
+                <FontAwesomeIcon className="search-icon" icon={faSearch} />
+                <input className="search-input" type="text" onChange={this.handleSearchChange} value={this.state.search} placeholder="Recherche" />
+              </div>
             </div>
           </header>
           <Route exact path='/' component={Home} />
