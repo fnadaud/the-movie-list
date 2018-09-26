@@ -5,7 +5,7 @@ import logo from './assets/header.png';
 import './App.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
 
@@ -23,7 +23,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: '',
+      menu: ''
     }
     this.header = React.createRef();
     this.sticky = 200;
@@ -51,22 +52,40 @@ class App extends Component {
     });
   }
 
+  toggleMenu = () => {
+    const { menu } = this.state;
+    if(menu === ""){
+      this.setState({ menu: "active"});
+    } else {
+      this.setState({ menu: ""});
+    }
+  }
+
+  hideMenu = () => {
+    if(this.state.menu !== ""){
+      this.setState({ menu: ""});
+    }
+  }
+
   render() {
     return (
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <div className="header-bar" style={{display: "flex", justifyContent: 'space-evenly'}} ref={this.header}>
-              <div className="links">
-                <NavLink to='/nowplaying' className={'link'}>À l'affiche</NavLink>
-                <NavLink to='/popular' className={'link'}>Populaires</NavLink>
-                <NavLink to='/toprated' className={'link'}>Les mieux notés</NavLink>
+            <nav className="header-bar" ref={this.header}>
+              <div className="bars-icon" onClick={this.toggleMenu}>
+                <FontAwesomeIcon size="lg" icon={faBars} />
+              </div>
+              <div className={`links ${this.state.menu}`}>
+                <NavLink to='/nowplaying' className={'link'} onClick={this.hideMenu}>À l'affiche</NavLink>
+                <NavLink to='/popular' className={'link'} onClick={this.hideMenu}>Populaires</NavLink>
+                <NavLink to='/toprated' className={'link'} onClick={this.hideMenu}>Les mieux notés</NavLink>
               </div>
               <div className="search-container">
                 <FontAwesomeIcon className="search-icon" icon={faSearch} />
                 <input className="search-input" type="text" onChange={this.handleSearchChange} value={this.state.search} placeholder="Recherche" />
               </div>
-            </div>
+            </nav>
           </header>
           <Route exact path='/' component={Home} />
           <Route path='/nowplaying' component={NowPlaying} />

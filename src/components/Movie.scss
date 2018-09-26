@@ -88,3 +88,63 @@
 .overview {
     height: 100px;;
 }
+
+@media screen and (max-width: 360px) {
+    .movieContainer {
+        width: 280px;
+    }
+
+    .movie {
+        width: 260px;
+        height: 190px;
+    }
+
+    .ratingContainer {
+        top: -200px;
+        left: 248px;
+    }
+
+    .poster {
+        height: 190px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 460px) {
+    .movieContainer {
+        width: 320px;
+    }
+
+    .movie {
+        width: 300px;
+        height: 200px;
+    }
+
+    .ratingContainer {
+        top: -210px;
+        left: 288px;
+    }
+
+    .poster {
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 640px) {
+    .movieContainer {
+        width: 390px;
+    }
+
+    .movie {
+        width: 370px;
+        height: 250px;
+    }
+
+    .ratingContainer {
+        top: -260px;
+        left: 358px;
+    }
+
+    .poster {
+        height: 250px;
+    }
+}
