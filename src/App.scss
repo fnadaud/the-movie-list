@@ -114,16 +114,20 @@
     margin: auto;
     height: 52px;
   }
+
+  .App-header {
+    height: 175px;
+  }
 }
 
-@media screen and (min-width: 460px) and (max-width: 640px) {
+@media screen and (min-width: 461px) and (max-width: 640px) {
   .App-logo {
     margin: auto;
     height: 75px;
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 641px) {
   .App-logo {
     margin: auto;
     height: 100px;
@@ -169,5 +173,11 @@
 
   .bars-icon {
     display: block;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .links.active {
+    top: 172px;
   }
 }

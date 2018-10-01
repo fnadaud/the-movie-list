@@ -12,6 +12,10 @@ export const getTopRated = (page = 1) => {
     return fetch(`${THE_MOVIE_DB.url}movie/top_rated?api_key=${THE_MOVIE_DB.key}&language=fr-FR&page=${page}`).then(response => response.json());
 }
 
+export const getUpcoming = (page = 1) => {
+    return fetch(`${THE_MOVIE_DB.url}movie/upcoming?api_key=${THE_MOVIE_DB.key}&language=fr-FR&page=${page}&region=FR`).then(response => response.json());
+}
+
 export const getCredits = (movie_id) => {
     return fetch(`${THE_MOVIE_DB.url}movie/${movie_id}/credits?api_key=${THE_MOVIE_DB.key}`).then(response => response.json());
 }

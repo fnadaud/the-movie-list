@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom'
-import { NowPlaying, Popular, TopRated, MovieDetail } from './components';
+import { Route, NavLink, Link } from 'react-router-dom'
+import { Home, NowPlaying, Popular, TopRated, MovieDetail } from './components';
 import logo from './assets/header.png';
 import './App.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
 
-class Home extends Component {
+import { STICKY_DEFAULT, STICKY_UNDER_460 } from './utils/constants'
 
-  render() {
-    return (
-      <p>
-        Page d'accueil
-      </p>
-    )
-  }
-}
+// class Home extends Component {
+
+//   render() {
+//     return (
+//       <p>
+//         Page d'accueil
+//       </p>
+//     )
+//   }
+// }
 
 class App extends Component {
 
@@ -27,15 +29,17 @@ class App extends Component {
       menu: ''
     }
     this.header = React.createRef();
-    this.sticky = 200;
+    this.handleResize();
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleScroll = () => {
@@ -44,6 +48,13 @@ class App extends Component {
     } else {
       this.header.current.classList.remove("sticky");
     }
+  }
+
+  handleResize = () => {
+    if(window.matchMedia("(max-width: 460px)").matches)
+      this.sticky = STICKY_UNDER_460;
+    else
+      this.sticky = STICKY_DEFAULT;
   }
 
   handleSearchChange = (event) => {
@@ -71,7 +82,9 @@ class App extends Component {
     return (
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <Link to='/' className="App-logo">
+              <img src={logo} className="App-logo" alt="logo" />
+            </Link>
             <nav className="header-bar" ref={this.header}>
               <div className="bars-icon" onClick={this.toggleMenu}>
                 <FontAwesomeIcon size="lg" icon={faBars} />
